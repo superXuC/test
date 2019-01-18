@@ -1,11 +1,12 @@
 $('#musicBtn').bind("click",function () {
     var audioEle =$("#autoplay")[0]
-    if (audioEle.played){
-        audioEle.pause();  //暂停
-        $("#musicBtn").removeClass("on")
-    }else {
+    if (audioEle.paused){
         audioEle.play();   //播放
         $("#musicBtn").addClass("on")
+    }else {
+        audioEle.pause();  //暂停
+        $("#musicBtn").removeClass("on")
+
     }
 })
 
