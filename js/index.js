@@ -221,12 +221,6 @@ $(".slide9 input").on("click",function(){
     $('.motto').html(motto[index_])
     var myChart = echarts.init(document.getElementById('main'))
     option = {
-        title: {
-            text: '性格趋势',
-            textStyle:{
-                color:'#344532'
-            }
-        },
         tooltip: {},
 
         radar: {
@@ -241,17 +235,17 @@ $(".slide9 input").on("click",function(){
                 }
             },
             indicator: [
-                { name: '开朗', max: 2},
+                { name: '开朗', max: 6},
                 { name: '乐观', max: 6},
-                { name: '温和', max: 8},
-                { name: '耐心', max: 1},
-                { name: '感性', max: 7},
+                { name: '温和', max: 6},
+                { name: '耐心', max: 6},
+                { name: '感性', max: 6},
                 { name: '浪漫', max: 6},
-                { name: '稳重', max: 3},
-                { name: '独立', max: 7}
+                { name: '稳重', max: 6},
+                { name: '独立', max: 6}
             ],
             center: ['50%', '50%'],
-            radius: 120
+            radius: 100
         },
         series: [{
             type: 'radar',
