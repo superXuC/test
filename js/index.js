@@ -221,8 +221,6 @@ $(".slide9 input").on("click",function(){
     $('.motto').html(motto[index_])
     var myChart = echarts.init(document.getElementById('main'))
     option = {
-        tooltip: {},
-
         radar: {
             // shape: 'circle',
             name: {
