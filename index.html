@@ -6,9 +6,8 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
 <link rel="stylesheet" href="css/swiper.min.css">
 <link rel="stylesheet" href="css/animate.min.css">
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-
-
+<link rel="stylesheet" href="css/fakeLoad.css">
+ <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <style>
 *{
 	margin:0;
@@ -19,7 +18,7 @@ html,body{
 }
 body{
     font-size: 18px;
-    font-family: "KaiTi";
+    font-family: "microsoft yahei";
 }
 .swiper-container {
   /*  width: 320px;
@@ -33,13 +32,14 @@ body{
 .slide1,.slide2,.slide3,.slide4,.slide5,.slide6,.slide7,.slide8,.slide9{
 	width:100%;
 	height:100%;
-	background:url(images/bg.jpg) no-repeat left top;
-	background-size:cover;
+	background:url(images/bg01.jpg) no-repeat left top;
+	background-size:100% 100%;
 }
 .slide10{
     width: 100%;
     height: 100%;
-    background-color: pink;
+    background:url(images/bg02.jpg) no-repeat left top;
+    background-size:100% 100%;
 }
 img{
 	display:block;
@@ -158,10 +158,19 @@ input:checked+label::after {
     color: white;
     border-radius: 10px;
 }
+.fl{
+    top: 0!important;
+    height: 100% !important;
+}
+.fakeloader img{
+        width: 100%;
+        height: 100%;
+    }
 </style>
 </head>
 
 <body>
+<div class="fakeloader"></div>
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <!-------------slide1----------------->
@@ -216,7 +225,7 @@ input:checked+label::after {
                 <form>
                     <div class="as"><input type="radio" name="fifth" id="fifthA"><label for="fifthA"></label><span>A.掌心向下，五指分开</span></div>
                     <div class="as"><input type="radio" name="fifth" id="fifthB"><label for="fifthB"></label><span>B.掌心向下，五指合拢</span></div>
-                    <div class="as"><input type="radio" name="fifth" id="fifthC"><label for="fifthC"></label><span>C.掌心向上，五指分开</span></div>
+                    <div class="as"><input type="radio" name="fifth" id="fifthC"><label for="fifthC"></label><span>C.掌心向下，五指合拢</span></div>
                     <div class="as"><input type="radio" name="fifth" id="fifthD"><label for="fifthD"></label><span>D.掌心向上，五指合拢</span></div>
                 </form>
             </div>
@@ -226,7 +235,7 @@ input:checked+label::after {
             <div class="ani resize" style="width:320px;height:327px;left:0px;top:180px;z-index:1;" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
                 <form>
                     <div class="as"><input type="radio" name="sixth" id="sixthA"><label for="sixthA"></label><span>A.和蔼慈祥的老公公</span></div>
-                    <div class="as"><input type="radio" name="sixth" id="sixthB"><label for="sixthB"></label><span>B.在家门口嬉戏的小娃儿</span></div>
+                    <div class="as"><input type="radio" name="sixth" id="sixthB"><label for="sixthB"></label><span>B.和蔼慈祥的老公公</span></div>
                     <div class="as"><input type="radio" name="sixth" id="sixthC"><label for="sixthC"></label><span>C.正在市集做生意的商人</span></div>
                     <div class="as"><input type="radio" name="sixth" id="sixthD"><label for="sixthD"></label><span>D.在河边唱歌洗衣的少女</span></div>
                 </form>
@@ -268,11 +277,11 @@ input:checked+label::after {
         </section>
         <section class="swiper-slide slide10 swiper-no-swiping">
             <div id="main" style="width: 100%;height:300px;"></div>
-            <div style="color: white;padding: 20px 10px">
+            <div style="color: white;margin: 15px 10px;background: rgba(3,3,3,0.4);border-radius: 10px">
                 <h2 class="title" style="text-align: center"></h2>
-                <p class="arrmixTitle" style="text-align: center;margin-top: 8px"></p>
-                <p class="main" style="font-size: 14px;margin-top: 8px"></p>
-                <p class="motto" style="font-weight: 700;margin-top: 8px"></p>
+                <p class="arrmixTitle" style="text-align: center;margin-top: 5px"></p>
+                <p class="main" style="font-size: 14px;margin-top: 5px;text-indent:2em"></p>
+                <p class="motto" style="font-weight: 700;margin-top: 5px"></p>
                 <div style="width: 100%;text-align: center"><img src="images/joqiu2.jpg" alt="" style="display:inline-block;width: 65px;height: 65px;margin-top: 15px"></div>
                 <div style="width: 100%;text-align: center"><img src="images/company.png" alt="" style="display:inline-block;width: 60%;height: 40%;margin-top: 5px"></div>
             </div>
@@ -285,6 +294,28 @@ input:checked+label::after {
     <!--<audio src="11.mp3" autoplay="autoplay" loop="loop" id="autoplay"></audio>-->
    <img src="images/arrow.png" style="width:30px;height:20px; top:460px; left:150px;" id="array" class="resize">
 </div>
+<!--<script type="text/javascript">-->
+    <!--// 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器-->
+    <!--var useragent = navigator.userAgent;-->
+    <!--if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {-->
+        <!--// 这里警告框会阻塞当前页面继续加载-->
+        <!--alert('已禁止本次访问：您必须使用微信内置浏览器访问本页面！');-->
+        <!--// 以下代码是用javascript强行关闭当前页面-->
+        <!--var opened = window.open('about:blank', '_self');-->
+        <!--opened.opener = null;-->
+        <!--opened.close();-->
+    <!--}-->
+<!--</script>-->
+<script src="js/fakeLoader.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".fakeloader").fakeLoader({
+            timeToHide:3000,
+            bgColor:"#fff",
+            imagePath:"images/active.gif"
+        });
+    });
+</script>
 <script src="js/echarts.min_lei.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/swiper.animate.min.js"></script>
